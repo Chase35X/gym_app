@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybex Chest Press</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="screen active" id="screenCybexChestPress">
+            <h1>Cybex Chest Press</h1>
+            <div class="input-container">
+                <label for="weight">Weight (kg):</label>
+                <input type="number" id="weight" name="weight">
+            </div>
+            <div class="input-container">
+                <label for="reps">Reps:</label>
+                <input type="number" id="reps" name="reps">
+            </div>
+            <button id="addSetButton">Add Set</button>
+            <div class="chart-container">
+                <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar">
+        <div class="nav-item" id="homeButton">
+            <img src="home_icon.png" alt="Home">
+        </div>
+        <div class="nav-item" id="scanButton">
+            <img src="scan_icon.png" alt="Scan">
+        </div>
+        <div class="nav-item" id="accountButton">
+            <img src="account_icon.png" alt="Account">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
