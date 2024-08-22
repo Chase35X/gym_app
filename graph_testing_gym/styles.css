@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Equal space between top and bottom graphs */
+    align-items: center;
+    background-color: white;
+    padding: 20px;  /* Added padding around the entire content */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 90%;  /* Adjusted width to allow padding */
+    height: auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4vw; /* Responsive font size */
+    margin-bottom: 2vh;
+}
+
+.total-scans p {
+    font-size: 3.5vw; /* Responsive font size */
+    margin: 1.5vh 0;
+}
+
+.total-scans span {
+    background: linear-gradient(90deg, rgba(255, 182, 193, 0.8), rgba(255, 239, 170, 0.8)); /* Pink to yellow gradient */
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 4.5vw;
+    color: #000;
+}
+
+canvas {
+    width: 85%;
+    height: auto;
+    margin: 1.5vh 0; /* Adjusted margin to make graphs closer */
+}
+
+.top-machines {
+    font-size: 3.5vw; /* Reduced font size */
+    margin-top: 1.5vh;
+}
+
+.horizontal-progress {
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 20px; /* Adjusted height to match the image */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 1.5vh 0; /* Adjusted margin to make spacing equal */
+}
+
+.horizontal-progress .progress {
+    height: 100%;
+    background-color: #80ed99;
+    width: 15%;  /* Fixed width for 15% usage */
+    position: relative;
+}
+
+.horizontal-progress .progress-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #80ed99;
+    border-radius: 50%;
+    position: absolute;
+    right: -10px; /* Half of the circle should be outside the progress bar */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.horizontal-progress .percentage {
+    position: absolute;
+    right: -50px; /* Adjusted to accommodate the circle */
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+

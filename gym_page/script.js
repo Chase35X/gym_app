@@ -27,4 +27,37 @@ document.addEventListener("DOMContentLoaded", function() {
         alert('Navigating to Account Page');
         // Implement navigation logic here, e.g., window.location.href = `account.html`;
     });
+
+    setMachines('Planet Fitness')
 });
+
+
+async function setMachines(location){
+    var getMachinesURL = 'https://us-east-1.aws.data.mongodb-api.com/app/e-moon-vjusocg/endpoint/getAllMachines'
+
+    let response = await fetch(getMachinesURL)
+        .then(data => {
+            return data;
+        })           //api for the get request
+    
+    const machinesObject = await response.json() 
+
+    var machinesList = []
+
+    for(var i = 0; i<machinesObject.length; i++){
+        
+        if(machinesObject[i].location == location){
+            machinesList.push(machinesObject[i].machine_name)
+        }
+        
+    }
+
+    var innerHTML = ''
+    var listMachinesHTML = document.getElementById('machineList')
+
+    for(var item = 0; item < machinesList.length; item++){
+        innerHTML += '<div class="machine" data-machine="machine1">' + machinesList[item] + '</div>'
+    }
+
+    listMachinesHTML.innerHTML = innerHTML
+}

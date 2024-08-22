@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const accountButton = document.getElementById('accountButton');
     const addSetButton = document.getElementById('addSetButton');
     const weightInput = document.getElementById('weight');
-    const repsInput = document.getElementById('reps');
+    const repsInput = document.getElementById('reps'); 
 
     homeButton.addEventListener('click', function() {
         alert('Navigating to Home Page');
@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const lineChart = new Chart(document.getElementById('lineChart'), {
         type: 'line',
         data: {
-            labels: ['Set 1', 'Set 2', 'Set 3', 'Set 4', 'Set 5'],
+            labels: [],
             datasets: [{
-                label: 'Weight Lifted (kg)',
-                data: [65, 59, 80, 81, 56],
+                label: 'Output Today (XL)',
+                data: [],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1,
@@ -58,8 +58,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (weight && reps) {
             const newSetLabel = `Set ${lineChart.data.labels.length + 1}`;
             lineChart.data.labels.push(newSetLabel);
-            lineChart.data.datasets[0].data.push(weight);
+            lineChart.data.datasets[0].data.push(weight*reps);
             lineChart.update();
+
+            inputSet(reps, weight, 'chaselen@bu.edu', 'Planet Fitness', 'TestingMachine')
 
             weightInput.value = '';
             repsInput.value = '';
@@ -68,3 +70,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+async function inputSet(rep, weight, user, location, machine){
+    var inputSetURL = 'https://us-east-1.aws.data.mongodb-api.com/app/e-moon-vjusocg/endpoint/inputSet?arg1='
+
+    inputSetURL += rep + '&arg2=' + weight + '&arg3=' + user + '&arg4=' + location + '&arg5=' + machine
+
+    const options = {
+        method: 'POST'
+    };
+
+    let response = await fetch(inputSetURL, options)
+        .then(data => {
+            return data;
+        })           //api for the get request
+    
+    const output = await response.json() 
+
+    return output
+}

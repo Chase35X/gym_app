@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Usage Stats</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Cybex Chest Press</h1>
+        <div class="total-scans">
+            <p>Total scans this month: <span>338</span></p>
+        </div>
+        <canvas id="usageChart"></canvas>
+        <div class="top-machines">
+            <p>Top 15% of machines used</p>
+            <div class="horizontal-progress">
+                <div class="progress">
+                    <div class="progress-circle"></div>
+                </div>
+                <div class="percentage">15%</div>
+            </div>
+        </div>
+        
+        
+        <canvas id="comparisonChart"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

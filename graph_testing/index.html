@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f5f5f5;
+            color: #333;
+            min-height: 100vh;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            width: 90%;
+            max-width: 500px;
+            margin: 20px 0;
+            position: relative;
+        }
+        #doughnutChart {
+            position: relative;
+        }
+        #doughnutChartContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #doughnutChartLabel {
+            position: absolute;
+            font-size: 2em; /* Increased font size */
+            font-weight: bold;
+            color: #333;
+        }
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .navbar img {
+            width: 30px;
+            height: 30px;
+        }
+        .spacer {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your lifts</h1>
+    <h2>Most improved lift of the month</h2>
+    <p>Arsenal Shoulder Press</p>
+    <div class="chart-container">
+        <canvas id="improvedLiftChart"></canvas>
+    </div>
+
+    <h2>Most used machines this month</h2>
+    <div class="chart-container">
+        <canvas id="pieChart"></canvas>
+    </div>
+
+    <h2>Arsenal Shoulder Press</h2>
+    <div class="chart-container">
+        <canvas id="groupedBarChart"></canvas>
+    </div>
+
+    <h2>Percentage of total monthly output</h2>
+    <div id="doughnutChartContainer" class="chart-container">
+        <canvas id="doughnutChart"></canvas>
+        <div id="doughnutChartLabel">76%</div>
+    </div>
+
+    <h2>Strength Compared to Last Month</h2>
+    <div class="chart-container">
+        <canvas id="areaChart"></canvas>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="navbar">
+        <img src="home_icon.png" alt="Home">
+        <img src="scan_icon.png" alt="Scan">
+        <img src="account_icon.png" alt="Account">
+    </div>
+
+    <script>
+        // Grouped Bar Chart for "Most improved lift of the month"
+        var ctxImprovedLift = document.getElementById('improvedLiftChart').getContext('2d');
+        var improvedLiftChart = new Chart(ctxImprovedLift, {
+            type: 'bar',
+            data: {
+                labels: ['8/1', '8/6', '8/16', '8/27'],
+                datasets: [{
+                    label: 'Set 1',
+                    data: [10, 20, 15, 30],
+                    backgroundColor: '#FF6384'
+                }, {
+                    label: 'Set 2',
+                    data: [15, 25, 20, 35],
+                    backgroundColor: '#36A2EB'
+                }, {
+                    label: 'Set 3',
+                    data: [20, 30, 25, 40],
+                    backgroundColor: '#FFCE56'
+                }, {
+                    label: 'Set 4',
+                    data: [25, 35, 30, 45],
+                    backgroundColor: '#4BC0C0'
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        stacked: false
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Pie Chart for "Most used machines this month"
+        var ctxPie = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Arsenal Shoulder Press', 'Cybex Incline Bench', 'Hoist Leg Extension', 'Arsenal Lateral Raise', 'Arsenal Tricep Extension'],
+                datasets: [{
+                    data: [30, 25, 20, 15, 10],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+                }]
+            },
+            options: {}
+        });
+
+        // Grouped Bar Chart for "Arsenal Shoulder Press"
+        var ctxGroupedBar = document.getElementById('groupedBarChart').getContext('2d');
+        var groupedBarChart = new Chart(ctxGroupedBar, {
+            type: 'bar',
+            data: {
+                labels: ['7/12', '7/15', '7/20', '7/28', '8/1'],
+                datasets: [{
+                    label: 'Set 1',
+                    data: [10, 20, 15, 30, 25],
+                    backgroundColor: '#FF6384'
+                }, {
+                    label: 'Set 2',
+                    data: [15, 25, 20, 35, 30],
+                    backgroundColor: '#36A2EB'
+                }, {
+                    label: 'Set 3',
+                    data: [20, 30, 25, 40, 35],
+                    backgroundColor: '#FFCE56'
+                }, {
+                    label: 'Set 4',
+                    data: [25, 35, 30, 45, 40],
+                    backgroundColor: '#4BC0C0'
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        stacked: false
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Doughnut Chart for "Percentage of total monthly output"
+        var ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+        var doughnutChart = new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: ['Achieved', 'Remaining'],
+                datasets: [{
+                    data: [76, 24],
+                    backgroundColor: ['#FF6384', '#FFCE56'],
+                    hoverBackgroundColor: ['#FF6384', '#FFCE56']
+                }]
+            },
+            options: {
+                cutout: '70%',
+            }
+        });
+
+        // Area Chart for "Strength Compared to Last Month"
+        var ctxArea = document.getElementById('areaChart').getContext('2d');
+        var areaChart = new Chart(ctxArea, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'This Month',
+                    data: [10, 30, 50, 0],
+                    fill: true,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }, {
+                    label: 'Last Month',
+                    data: [30, 20, 40, 25],
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
