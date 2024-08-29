@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total Monthly Output</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Add Google Fonts for a sleeker look -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <div class="container">
         <div class="screen active" id="screenTotalMonthlyOutput">
-            <h1>Total Monthly Output</h1>
+            <header>
+                <div class="header-left">
+                    <div class="icon">📊</div>
+                    <h1>Total Monthly Output</h1>
+                </div>
+                <div class="settings-icon">⚙️</div>
+            </header>
+
+            <!-- Pie Chart Container -->
             <div class="chart-container">
                 <canvas id="pieChart"></canvas>
             </div>
+
+            <!-- Workout List -->
             <div id="workoutList" class="summary-container">
                 <div class="summary-item">
                     <span>Total Monthly Output:</span>
@@ -26,30 +36,35 @@
                     <span>1.7k VL</span>
                 </div>
                 <div class="summary-item">
+                    <span>Test</span>
                     <span>1.4k VL</span>
                 </div>
                 <div class="summary-item">
+                    <span>Test</span>
                     <span>1.1k VL</span>
                 </div>
                 <div class="summary-item">
+                    <span>Test</span>
                     <span>884 VL</span>
                 </div>
                 <div class="summary-item">
+                    <span>Test</span>
                     <span>341k VL</span>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Navbar with Font Awesome icons -->
     <div class="navbar">
         <div class="nav-item" id="homeButton">
-            <img src="home_icon.png" alt="Home">
+            <i class="fas fa-home"></i>
         </div>
         <div class="nav-item" id="scanButton">
-            <img src="scan_icon.png" alt="Scan">
+            <i class="fas fa-camera"></i>
         </div>
         <div class="nav-item" id="accountButton">
-            <img src="account_icon.png" alt="Account">
+            <i class="fas fa-user"></i>
         </div>
     </div>
 

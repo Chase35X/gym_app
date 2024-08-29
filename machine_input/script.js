@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const addSetButton = document.getElementById('addSetButton');
     const weightInput = document.getElementById('weight');
     const repsInput = document.getElementById('reps'); 
+    const setTableBody = document.getElementById('setTable').querySelector('tbody');
 
     homeButton.addEventListener('click', function() {
         alert('Navigating to Home Page');
@@ -61,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function() {
             lineChart.data.datasets[0].data.push(weight*reps);
             lineChart.update();
 
-            inputSet(reps, weight, 'chaselen@bu.edu', 'Planet Fitness', 'TestingMachine')
+            addTableRow(newSetLabel, weight, reps);
 
             weightInput.value = '';
             repsInput.value = '';
@@ -69,23 +70,14 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Please enter both weight and reps');
         }
     });
+
+    function addTableRow(setLabel, weight, reps) {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${setLabel}</td>
+            <td>${weight} lbs</td>
+            <td>${reps}</td>
+        `;
+        setTableBody.appendChild(newRow);
+    }
 });
-
-async function inputSet(rep, weight, user, location, machine){
-    var inputSetURL = 'https://us-east-1.aws.data.mongodb-api.com/app/e-moon-vjusocg/endpoint/inputSet?arg1='
-
-    inputSetURL += rep + '&arg2=' + weight + '&arg3=' + user + '&arg4=' + location + '&arg5=' + machine
-
-    const options = {
-        method: 'POST'
-    };
-
-    let response = await fetch(inputSetURL, options)
-        .then(data => {
-            return data;
-        })           //api for the get request
-    
-    const output = await response.json() 
-
-    return output
-}

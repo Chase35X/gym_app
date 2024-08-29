@@ -1,64 +1,71 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffe6e6; /* light pink background */
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ffc5c5;
-    box-shadow: 0 0 10px rgba(255, 192, 203, 0.1);
-  }
-  
-  .screen {
-    padding: 20px;
-  }
-  
-  .machine-selection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .machine {
-    width: 150px;
-    height: 150px;
-    margin: 10px;
-    background-color: #ffc5c5; /* light pink background */
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff; /* white text */
-    font-size: 24px;
-    font-weight: bold;
-    cursor: pointer; /* make it look like a button */
-    padding: 10px;
-    text-align: center
-  }
-  
-  .machine:hover {
-    background-color: #ffb6c1; /* darker pink on hover */
-  }
-  
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffc5c5;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .nav-item {
-    margin: 10px;
-  }
-  
-  .nav-item img {
-    width: 30px;
-    height: 30px;
-  }
+  font-family: Arial, sans-serif;
+  background-color: #ffe6e6; /* light pink background */
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ffc5c5;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.1);
+}
+
+.screen {
+  padding: 20px;
+}
+
+.machine-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.machine {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  background-color: #ffc5c5; /* light pink background */
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff; /* white text */
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer; /* make it look like a button */
+  padding: 10px;
+  text-align: center;
+}
+
+.machine:hover {
+  background-color: #ffb6c1; /* darker pink on hover */
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffc5c5;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-item {
+  margin: 0 10px; /* Reduced margin to make icons closer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item i {
+  font-size: 24px; /* Icon size */
+  color: #333;
+}
+
+.nav-item:hover i {
+  color: #ff9999;
+}

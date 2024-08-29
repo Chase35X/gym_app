@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="icon">📊</div>
+                <h1>Graph Analysis</h1>
+            </div>
+            <div class="settings-icon">⚙️</div>
+        </header>
+
+        <div class="content">
+            <h2>Arsenal Shoulder Press</h2>
+            <div class="chart-container">
+                <canvas id="groupedBarChart"></canvas>
+            </div>
+
+            <h2>Percentage of Total Monthly Output</h2>
+            <div id="doughnutChartContainer" class="chart-container">
+                <canvas id="doughnutChart"></canvas>
+                <div id="doughnutChartLabel">76%</div>
+            </div>
+
+            <h2>Strength Compared to Last Month</h2>
+            <div class="chart-container">
+                <canvas id="areaChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar with Font Awesome icons -->
+    <div class="navbar">
+        <div class="nav-item" id="homeButton">
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="nav-item" id="scanButton">
+            <i class="fas fa-camera"></i>
+        </div>
+        <div class="nav-item" id="accountButton">
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

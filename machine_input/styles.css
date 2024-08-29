@@ -81,6 +81,38 @@ button:hover {
     height: 300px;
 }
 
+.table-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #ffcccb;
+    color: #333;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #ffcccb;
+}
+
 .navbar {
     position: fixed;
     bottom: 0;
@@ -97,9 +129,16 @@ button:hover {
 .nav-item {
     margin: 0 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav-item img {
-    width: 30px;
-    height: 30px;
+.nav-item i {
+    font-size: 36px; /* Increased font size for larger icons */
+    color: #333;
+}
+
+.nav-item:hover i {
+    color: #ff9999;
 }

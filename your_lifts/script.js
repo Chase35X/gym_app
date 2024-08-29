@@ -19,34 +19,54 @@ document.addEventListener("DOMContentLoaded", function() {
         // Implement navigation logic here, e.g., window.location.href = `account.html`;
     });
 
-    // Bar chart setup
-    const barChart = new Chart(document.getElementById('barChart'), {
+    // Grouped Bar Chart for "Most improved lift of the month"
+    var ctxImprovedLift = document.getElementById('improvedLiftChart').getContext('2d');
+    var improvedLiftChart = new Chart(ctxImprovedLift, {
         type: 'bar',
         data: {
-            labels: ['Lift 1', 'Lift 2', 'Lift 3', 'Lift 4', 'Lift 5'],
+            labels: ['8/1', '8/6', '8/16', '8/27'],
             datasets: [{
-                label: 'Weight Lifted (kg)',
-                data: [65, 59, 80, 81, 56],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)'
-                ],
-                borderWidth: 1
+                label: 'Set 1',
+                data: [10, 20, 15, 30],
+                backgroundColor: '#FF6384'
+            }, {
+                label: 'Set 2',
+                data: [15, 25, 20, 35],
+                backgroundColor: '#36A2EB'
+            }, {
+                label: 'Set 3',
+                data: [20, 30, 25, 40],
+                backgroundColor: '#FFCE56'
+            }, {
+                label: 'Set 4',
+                data: [25, 35, 30, 45],
+                backgroundColor: '#4BC0C0'
             }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: false
+            scales: {
+                x: {
+                    stacked: false
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
     });
+
+    // Pie Chart for "Most used machines this month"
+    var ctxPie = document.getElementById('pieChart').getContext('2d');
+    var pieChart = new Chart(ctxPie, {
+        type: 'pie',
+        data: {
+            labels: ['Arsenal Shoulder Press', 'Cybex Incline Bench', 'Hoist Leg Extension', 'Arsenal Lateral Raise', 'Arsenal Tricep Extension'],
+            datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            }]
+        },
+        options: {}
+    });
+
 });

@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Lifts</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fitness Dashboard</title>
+    <link rel="stylesheet" href="styles.css"> 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <div class="screen active" id="screenYourLifts">
-            <h1>Your Lifts</h1>
-            <div class="chart-container">
-                <canvas id="barChart"></canvas>
-            </div>
+        <!-- Existing content... -->
+        
+        <!-- New content for the additional graphs -->
+        <h2>Most improved lift of the month</h2>
+        <h3>Arsenal Shoulder Press</h3> <!-- Updated text to match the rest of the page -->
+        <div class="chart-container">
+            <canvas id="improvedLiftChart"></canvas>
+        </div>
+
+        <h2>Most used machines this month</h2>
+        <div class="chart-container">
+            <canvas id="pieChart"></canvas>
         </div>
     </div>
 
+    <!-- New bottom navbar -->
     <div class="navbar">
         <div class="nav-item" id="homeButton">
-            <img src="home_icon.png" alt="Home">
+            <i class="fas fa-home"></i>
         </div>
         <div class="nav-item" id="scanButton">
-            <img src="scan_icon.png" alt="Scan">
+            <i class="fas fa-camera"></i>
         </div>
         <div class="nav-item" id="accountButton">
-            <img src="account_icon.png" alt="Account">
+            <i class="fas fa-user"></i>
         </div>
     </div>
 

@@ -51,7 +51,7 @@ h1 {
     box-sizing: border-box;
 }
 
-.tabs{
+.tabs {
     display: flex;
     justify-content: space-around;
     text-align: center;
@@ -95,4 +95,25 @@ footer {
 
 .nav-item.active {
     color: #28a745;
+}
+
+.nav-item i {
+    font-size: 24px; /* Icon size */
+}
+
+#camera-btn {
+    background-color: #ff6347;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
