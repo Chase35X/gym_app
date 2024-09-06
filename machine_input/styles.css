@@ -59,15 +59,16 @@ button {
     padding: 10px;
     font-size: 1em;
     color: #fff;
-    background-color: #ffcccb;
+    background-color: #FF83C1;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
     margin-bottom: 20px; 
+    text-align: center;
 }
 
 button:hover {
-    background-color: #ff9999;
+    background-color: #FF1D8E;
 }
 
 .chart-container {
@@ -92,21 +93,25 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    border-radius: 25px;
 }
 
 th, td {
     text-align: center;
     padding: 10px;
     border: 1px solid #ddd;
+    border-radius: 10px;
 }
 
 th {
-    background-color: #ffcccb;
+    background-color: #FF83C1;
     color: #333;
+    border-radius: 10px;
 }
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+    border-radius: 10px;
 }
 
 tbody tr:hover {
@@ -120,14 +125,14 @@ tbody tr:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: #ffcccb;
+    background-color: #000000;
     padding: 10px 0;
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
 .nav-item {
-    margin: 0 20px;
+    margin: 0 40px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -136,9 +141,11 @@ tbody tr:hover {
 
 .nav-item i {
     font-size: 36px; /* Increased font size for larger icons */
-    color: #333;
+    color: #eeeeee;
 }
 
 .nav-item:hover i {
     color: #ff9999;
 }
+
+

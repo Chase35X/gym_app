@@ -84,7 +84,7 @@ h2 {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #ffcccb; /* Navbar color from the uploaded file */
+    background-color: #000000; /* Navbar color from the uploaded file */
     display: flex;
     justify-content: center;
     padding: 10px 0;
@@ -93,7 +93,7 @@ h2 {
 }
 
 .nav-item {
-    margin: 0 20px;
+    margin: 0 40px;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -102,7 +102,7 @@ h2 {
 
 .nav-item i {
     font-size: 36px; /* Increased icon size to match the previous design */
-    color: #333;
+    color: #eeeeee;
 }
 
 .nav-item:hover i {

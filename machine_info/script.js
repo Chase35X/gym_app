@@ -31,19 +31,19 @@ function initCharts() {
             datasets: [{
                 label: 'Set 1',
                 data: [10, 20, 15, 30, 25],
-                backgroundColor: '#FF6384'
+                backgroundColor: '#3CB043'
             }, {
                 label: 'Set 2',
                 data: [15, 25, 20, 35, 30],
-                backgroundColor: '#36A2EB'
+                backgroundColor: '#B0FC38'
             }, {
                 label: 'Set 3',
                 data: [20, 30, 25, 40, 35],
-                backgroundColor: '#FFCE56'
+                backgroundColor: '#3DED97'
             }, {
                 label: 'Set 4',
                 data: [25, 35, 30, 45, 40],
-                backgroundColor: '#4BC0C0'
+                backgroundColor: '#03AC13'
             }]
         },
         options: {
@@ -63,11 +63,11 @@ function initCharts() {
     new Chart(ctxDoughnut, {
         type: 'doughnut',
         data: {
-            labels: ['Achieved', 'Remaining'],
+            // labels: ['Achieved', 'Remaining'],
             datasets: [{
                 data: [76, 24],
-                backgroundColor: ['#FF6384', '#FFCE56'],
-                hoverBackgroundColor: ['#FF6384', '#FFCE56']
+                backgroundColor: ['#82EEFD', '#1338BE'],
+                hoverBackgroundColor: ['#82EEFD', '#1338BE']
             }]
         },
         options: {
@@ -85,16 +85,18 @@ function initCharts() {
                 label: 'This Month',
                 data: [10, 30, 50, 0],
                 fill: true,
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
+                backgroundColor: 'rgba(227, 61, 148, 0.2)',
+                borderColor: 'rgba(207, 47, 116, 1)',
+                borderWidth: 1,
+                tension: 0.2
             }, {
                 label: 'Last Month',
                 data: [30, 20, 40, 25],
                 fill: true,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
+                borderWidth: 1,
+                tension: 0.2
             }]
         },
         options: {
