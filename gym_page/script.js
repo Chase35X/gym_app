@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Implement navigation logic here, e.g., window.location.href = `account.html`;
     });
 
-    setMachines('Planet Fitness');
+    // setMachines('Planet Fitness');
 });
 
 async function setMachines(location){

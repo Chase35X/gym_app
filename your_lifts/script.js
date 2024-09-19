@@ -22,25 +22,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Grouped Bar Chart for "Most improved lift of the month"
     var ctxImprovedLift = document.getElementById('improvedLiftChart').getContext('2d');
     var improvedLiftChart = new Chart(ctxImprovedLift, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['8/1', '8/6', '8/16', '8/27'],
             datasets: [{
-                label: 'Set 1',
+                label: 'Total Output',
                 data: [10, 20, 15, 30],
                 backgroundColor: '#FF6384'
-            }, {
-                label: 'Set 2',
-                data: [15, 25, 20, 35],
-                backgroundColor: '#36A2EB'
-            }, {
-                label: 'Set 3',
-                data: [20, 30, 25, 40],
-                backgroundColor: '#FFCE56'
-            }, {
-                label: 'Set 4',
-                data: [25, 35, 30, 45],
-                backgroundColor: '#4BC0C0'
             }]
         },
         options: {

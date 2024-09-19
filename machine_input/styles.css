@@ -59,7 +59,7 @@ button {
     padding: 10px;
     font-size: 1em;
     color: #fff;
-    background-color: #FF83C1;
+    background: linear-gradient(to bottom right, #FF6EC7, #FFF200);
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -104,8 +104,8 @@ th, td {
 }
 
 th {
-    background-color: #FF83C1;
-    color: #333;
+    background: linear-gradient(to bottom right, #FF6EC7, #FFF200);
+    color: white;
     border-radius: 10px;
 }
 
@@ -145,7 +145,7 @@ tbody tr:hover {
 }
 
 .nav-item:hover i {
-    color: #ff9999;
+    color: #eeeeee;
 }
 
 

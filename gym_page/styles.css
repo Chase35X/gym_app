@@ -1,6 +1,5 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffe6e6; /* light pink background */
 }
 
 .container {
@@ -8,7 +7,6 @@ body {
   margin: 40px auto;
   padding: 20px;
   background-color: #fff;
-  border: 1px solid #ffc5c5;
   box-shadow: 0 0 10px rgba(255, 192, 203, 0.1);
 }
 
@@ -23,11 +21,11 @@ body {
 }
 
 .machine {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 10px;
-  background-color: #ffc5c5; /* light pink background */
-  border-radius: 10px;
+  background: linear-gradient(to bottom right, #FF6EC7, #FFF200);
+  border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,22 +46,22 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #ffc5c5;
+  background-color: #000000;
   padding: 10px;
   display: flex;
   justify-content: center;
 }
 
 .nav-item {
-  margin: 0 10px; /* Reduced margin to make icons closer */
+  margin: 0 20px; /* Reduced margin to make icons closer */
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 36px;
 }
 
 .nav-item i {
-  font-size: 24px; /* Icon size */
-  color: #333;
+  color: #eeeeee;
 }
 
 .nav-item:hover i {

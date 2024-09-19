@@ -53,11 +53,14 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8d7da; /* Light pink background to match page theme */
-    border-radius: 10px;
+    background: linear-gradient(to bottom right, #FF6EC7, #FFF200);
+    border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
     color: #333;
+    font-weight: 1000;
+    font-size: 1.5em;
+    height: 3.5em;
 }
 
 .navbar {
@@ -66,25 +69,30 @@ h1 {
     left: 0;
     right: 0;
     height: 60px;
-    background-color: #ffcccb; /* Navbar color matching your design */
+    background-color: #000000; /* Navbar color matching your design */
     border-top: 2px solid #e0e0e0;
     display: flex;
-    justify-content: space-around; /* Evenly spaces icons */
-    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .nav-item {
-    margin: 0 5px; /* Reduced margin to make icons closer */
+    margin: 5px; /* Reduced margin to make icons closer */
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .nav-item i {
     font-size: 36px; /* Icon size */
-    color: #333;
+    color: #eeeeee;
+    text-align: center;
+    margin: 20px;
 }
 
 .nav-item:hover i {
-    color: #ff9999;
+    color: #eeeeee;
 }
+
+

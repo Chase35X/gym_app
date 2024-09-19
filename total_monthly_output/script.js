@@ -37,18 +37,18 @@ function initPieChart() {
     new Chart(ctxPie, {
         type: 'pie',
         data: {
-            labels: ['Workout A', 'Workout B', 'Workout C'],
+            labels: ['Machine A', 'Machine B', 'Machine C'],
             datasets: [{
                 data: [30, 45, 25],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(0, 0, 0)',
+                    'rgba(65, 65, 65)',
+                    'rgba(114, 114, 114)'
                 ],
                 borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)'
+                    'rgba(0, 0, 0, 1)',
+                    'rgba(65, 65, 65, 1)',
+                    'rgba(114, 114, 114, 1)'
                 ],
                 borderWidth: 1
             }]
